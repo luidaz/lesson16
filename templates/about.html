@@ -1,12 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>This is page about me.</h1>
 
-    <ul>
-        <li>Name: Liudas Strelciunas</li>
-        <li>Age: 35</li>
-        <li>City: Vilnius, Lithuania</li>
-    </ul>
+<ul>
+    <li>Name: Liudas Strelciunas</li>
+    <li>Age: 35</li>
+    <li>City: Vilnius, Lithuania</li>
+</ul>
+
+{% if name %}
+    <p>Sveikas, {{ name }}</p>
+{% endif %}
+
+<form method="post" action="/about">
+    <input name="contact-name" placeholder="Vardas" />
+    <br /><br />
+
+        <input name="contact-name" placeholder="Email" />
+    <br /><br />
+
+    <textarea name="contact-message" placeholder="Message"></textarea>
+
+    <button type="submit">Siusti</button>
+</form>
 
 {% endblock %}
