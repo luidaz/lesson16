@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>This is my portfolio page</h1>
+
+    <ul>
+        {% for item in items %}
+            <li>{{ item.period }} - {{ item.job }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
